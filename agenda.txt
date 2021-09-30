@@ -1,0 +1,12 @@
+1. utworzyć aplikację która na starcie dodaje 2 użytkowników do bazy danych
+2. użytkownik posiada rolę Admin lub/i User, w zależności od roli wyświetla stosowny komunikat w HTML "hello user" lub "hello admin"
+    (różne endpoints dla admin i user)
+3. rejestracja nowych userów
+4. rejestracja nowych userów wymagająca potwierdzenia adresu mail
+
+Maven dependencies
+- Spring Web
+- Spring data JPA, H2 Database (przechowywanie danych userów)
+- Thymeleaf (formatka potrzebna do log + rejestracja w HTML)
+- Spring Security
+- Java Mail Sender (potwierdzenie rejestracji)
