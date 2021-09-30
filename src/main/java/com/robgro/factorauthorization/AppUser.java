@@ -1,5 +1,7 @@
 package com.robgro.factorauthorization;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.GrantedAuthority;
@@ -14,6 +16,8 @@ import java.util.Collection;
 import java.util.Collections;
 
 // 2.  klasa tworząca użytkowników
+@Getter
+@Setter
 @Entity     // utworzenie encji w bazie danych
 public class AppUser implements UserDetails {
 
