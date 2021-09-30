@@ -9,11 +9,17 @@ public class Bootstrap {
 
     public Bootstrap(AppUserRepo appUserRepo, PasswordEncoder passwordEncoder) {
 
-        AppUser appUser = new AppUser();
-        appUser.setUserName("Rob");
-        appUser.setPassword(passwordEncoder.encode("Rob6"));
-        appUser.setRole("ROLE_ADMIN");
-        appUserRepo.save(appUser);
+        AppUser appUserRob = new AppUser();
+        appUserRob.setUserName("Rob");
+        appUserRob.setPassword(passwordEncoder.encode("Rob6"));
+        appUserRob.setRole("ROLE_ADMIN");
 
+        AppUser appUserTom = new AppUser();
+        appUserTom.setUserName("Tom");
+        appUserTom.setPassword(passwordEncoder.encode("Tom6"));
+        appUserTom.setRole("ROLE_USER");
+
+        appUserRepo.save(appUserRob);
+        appUserRepo.save(appUserTom);
     }
 }
