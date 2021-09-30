@@ -31,8 +31,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter { // --> zes
         auth.userDetailsService(userDetailsService);
     }
 
+    // 12. ustawienia zabezpieczeń
     @Override   // zarządzanie zabezpieczeniami na poziomie HTTP
     protected void configure(HttpSecurity http) throws Exception {
-        super.configure(http);
+        // 13. musimy poniższe wyłączyć, aby mieć dostęp do bazy H2
+        http.csrf().disable();
+        http.headers().disable();
     }
 }
