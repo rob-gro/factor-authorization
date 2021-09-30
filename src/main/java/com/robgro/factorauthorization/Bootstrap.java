@@ -10,8 +10,8 @@ public class Bootstrap {
     public Bootstrap(AppUserRepo appUserRepo, PasswordEncoder passwordEncoder) {
 
         AppUser appUser = new AppUser();
-        appUser.setUserName("Robuś");
-        appUser.setPassword(passwordEncoder.encode("Robuś_66"));
+        appUser.setUserName("Rob");
+        appUser.setPassword(passwordEncoder.encode("Rob6"));
         appUser.setRole("ROLE_ADMIN");
         appUserRepo.save(appUser);
 

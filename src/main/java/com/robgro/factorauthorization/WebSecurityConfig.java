@@ -37,5 +37,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter { // --> zes
         // 13. musimy poniższe wyłączyć, aby mieć dostęp do bazy H2
         http.csrf().disable();
         http.headers().disable();
+
+        // 15. dodajemy autoryzację userów
+        http.authorizeRequests()
+                .antMatchers("/hello").hasAuthority("ROLE_ADMIN")
+
+        // 16. dodanie formatki logowania
+                .and()
+                .formLogin().defaultSuccessUrl("/hello");
     }
 }
