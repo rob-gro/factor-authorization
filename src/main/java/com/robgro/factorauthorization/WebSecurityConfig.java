@@ -9,10 +9,17 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter { // --> zestaw implementacji security
 
+    // 9. wstrzykujemy
+    private UserDetailsServiceImpl userDetailsService;
+
+    public WebSecurityConfig(UserDetailsServiceImpl userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
 
     @Override   // zarządzanie użytkownikami
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        super.configure(auth);
+        // 6. połączenie między repo a spring security (SS), "userDetailsService" --> dostarcza info o userach
+        auth.userDetailsService(userDetailsService);
     }
 
     @Override   // zarządzanie zabezpieczeniami na poziomie HTTP
