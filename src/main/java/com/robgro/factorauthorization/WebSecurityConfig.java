@@ -40,9 +40,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter { // --> zes
 
         // 15. dodajemy autoryzację userów
         http.authorizeRequests()
-                .antMatchers("/hello").hasAuthority("ROLE_ADMIN")
+                .antMatchers("/hello").authenticated()
+                .antMatchers("/for-admin").hasRole("ADMIN")
+                .antMatchers("/for-user").hasAuthority("ROLE_USER")
 
-        // 16. dodanie formatki logowania
+                // 16. dodanie formatki logowania
                 .and()
                 .formLogin().defaultSuccessUrl("/hello");
     }

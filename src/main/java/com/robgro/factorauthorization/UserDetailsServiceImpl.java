@@ -22,7 +22,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     // 7. Warstwa komunikacji pomiędzy Repozytorium z danymi a WebSecurityConfig z SS
         @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        log.info("Currently I'm in loadUserByUserName in UserDetailsServiceImpl ----> does it work ???? ");
+        log.info("----> Currently I'm in loadUserByUserName in UserDetailsServiceImpl ----> does it work ???? ");
         // todo orElseThrow.
         return appUserRepo.findByUserName(s).get();
             }

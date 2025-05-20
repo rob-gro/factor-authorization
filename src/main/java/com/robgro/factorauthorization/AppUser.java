@@ -33,7 +33,7 @@ public class AppUser implements UserDetails {
 
     @Override   // 3. "rola" użytkownika, zwraca Collection, dlatego trzeba opakować Wrapem
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        log.info(" ---->  Collection with 'role' has started");
+        log.info("---->  AppUser.class, Collection with 'role' has started");
         return Collections.singleton(new SimpleGrantedAuthority("role"));
     }
 
